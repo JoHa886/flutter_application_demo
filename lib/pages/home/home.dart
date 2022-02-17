@@ -19,8 +19,11 @@ class _HomeState extends State<Home> {
         children: [
           Container(
             width: double.infinity,
+            alignment: Alignment.center,
             child: YmSearchBar(
                 hint: "关键词",
+                margin:
+                    const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 10.0),
                 width: MediaQuery.of(context).size.width - 40,
                 onSubmitted: (text) {
                   print("搜索$text");
