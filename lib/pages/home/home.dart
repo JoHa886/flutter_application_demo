@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_demo/components/search_bar.dart';
 
+import 'item_detail.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -9,6 +11,29 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List itemList = [
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+  ];
+  List<Widget> itemListC() {
+    List<Widget> itemListW = [];
+    for (int i = 0; i < itemList.length; i++) {
+      itemListW.add(ItemWrap(
+        name: itemList[i]['name'] + i.toString(),
+        id: itemList[i]["id"] + i.toString(),
+        addr: itemList[i]["addr"] + i.toString(),
+      ));
+    }
+    return itemListW;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,68 +67,7 @@ class _HomeState extends State<Home> {
               direction: Axis.vertical,
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    print(1);
-                  },
-                  child: Container(
-                      width: double.infinity,
-                      height: 150,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      color: Colors.amber,
-                      child: Text("hahahaha")),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    print(1);
-                  },
-                  child: Container(
-                      width: double.infinity,
-                      height: 150,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      color: Colors.amber,
-                      child: Text("hahahaha")),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    print(1);
-                  },
-                  child: Container(
-                      width: double.infinity,
-                      height: 150,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      color: Colors.amber,
-                      child: Text("hahahaha")),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    print(1);
-                  },
-                  child: Container(
-                      width: double.infinity,
-                      height: 150,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      color: Colors.amber,
-                      child: Text("hahahaha")),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    print(1);
-                  },
-                  child: Container(
-                      width: double.infinity,
-                      height: 150,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      color: Colors.amber,
-                      child: Text("hahahaha")),
-                ),
-              ],
+              children: itemListC(),
             ),
           )
         ],
