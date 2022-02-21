@@ -11,24 +11,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List itemList = [
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-    {"name": "sugon", "id": "123123", "addr": "四川成都"},
-  ];
+  // List itemList = [
+  //   {"name": "sugon", "id": "123123", "addr": "四川成都"},
+  //   {"name": "sugon", "id": "123123", "addr": "四川成都"},
+  //   {"name": "sugon", "id": "123123", "addr": "四川成都"},
+  //   {"name": "sugon", "id": "123123", "addr": "四川成都"},
+  //   {"name": "sugon", "id": "123123", "addr": "四川成都"},
+  // ];
+
   List<Widget> itemListC() {
     List<Widget> itemListW = [];
-    for (int i = 0; i < itemList.length; i++) {
+    for (int i = 0; i < 20; i++) {
       itemListW.add(ItemWrap(
-        name: itemList[i]['name'] + i.toString(),
-        id: itemList[i]["id"] + i.toString(),
-        addr: itemList[i]["addr"] + i.toString(),
+        name: "sugon" + i.toString(),
+        id: "id$i",
+        addr: "四川成都" + i.toString(),
       ));
     }
     return itemListW;
