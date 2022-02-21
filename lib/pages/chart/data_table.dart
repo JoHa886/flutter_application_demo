@@ -17,11 +17,11 @@ class UserLIst extends StatefulWidget {
 
 class _UserLIstState extends State<UserLIst> {
   List<User> data = [
-    User("PJH1", 18),
-    User("PJH2", 18),
-    User("PJH3", 18, selected: true),
-    User("PJH4", 18),
-    User("PJH5", 18),
+    User("sugon1", 18),
+    User("sugon2", 18),
+    User("sugon3", 18, selected: true),
+    User("sugon4", 18),
+    User("sugon5", 18),
   ];
 
   List _getUserRow() {
@@ -35,8 +35,8 @@ class _UserLIstState extends State<UserLIst> {
           cells: [
             DataCell(Text(data[i].name)),
             DataCell(Text('${data[i].age}')),
-            const DataCell(Text('男')),
-            const DataCell(Text('哈哈哈')),
+            DataCell(Text('男')),
+            DataCell(Text('哈哈哈哈')),
           ]));
     }
     return dataRows;
@@ -63,6 +63,12 @@ class _UserLIstState extends State<UserLIst> {
       ),
       child: SingleChildScrollView(
         child: DataTable(
+          horizontalMargin: 6.0,
+          columnSpacing: 6.0,
+          headingRowHeight: 32.0,
+          // border: TableBorder.all(
+          //     color: Colors.black, width: 1.0, style: BorderStyle.solid),
+          // dataRowHeight: 100.0,
           columns: const [
             DataColumn(label: Text("姓名")),
             DataColumn(label: Text("年龄")),

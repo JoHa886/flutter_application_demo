@@ -12,15 +12,15 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List itemList = [
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
-    {"name": "pjh", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
+    {"name": "sugon", "id": "123123", "addr": "四川成都"},
   ];
   List<Widget> itemListC() {
     List<Widget> itemListW = [];
@@ -50,11 +50,23 @@ class _HomeState extends State<Home> {
                 margin:
                     const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 10.0),
                 width: MediaQuery.of(context).size.width - 40,
-                onSubmitted: (text) {
-                  print("搜索$text");
-                  // _searchTextValue = text;
-                  // _loadData();
-                },
+                onSubmitted: (text) => showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('搜索事件'),
+                        content: Text('搜索内容：$text'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'Cancel'),
+                            child: const Text('Cancel'),
+                          ),
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'OK'),
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    ),
                 clearCallback: () {
                   // _searchTextValue = "";
                   // _loadData();
