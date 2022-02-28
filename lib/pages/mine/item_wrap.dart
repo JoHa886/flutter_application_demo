@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_demo/utils/global.dart';
 
 class ItemWrap extends StatelessWidget {
   const ItemWrap({Key? key}) : super(key: key);
@@ -186,7 +187,8 @@ class ItemWrap extends StatelessWidget {
                 content: const Text('点击了办公'),
                 actions: <Widget>[
                   TextButton(
-                    onPressed: () => Navigator.pop(context, 'Cancel'),
+                    onPressed: () =>
+                        Global.router.navigateTo(context, "/login"),
                     child: const Text('Cancel'),
                   ),
                   TextButton(
